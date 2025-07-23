@@ -1,4 +1,5 @@
 import logo from '../assets/piwclogo.png'
+import { Link } from 'react-router-dom'
 
 
 
@@ -14,10 +15,11 @@ function Navbar() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Events</a></li>
-                        <li><a>Sermons</a></li>
-                        <li><a>Gallery</a></li>
-                        <li><a>About Us</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/events">Events</Link></li>
+                        <li><Link to="/sermons">Sermons</Link></li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li><Link to="/aboutus">About Us</Link></li>
                     </ul>
                 </div>
                 <aside className="flex items-center space-x-2">
@@ -27,10 +29,11 @@ function Navbar() {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Events</a></li>
-                    <li><a>Sermons</a></li>
-                    <li><a>Gallery</a></li>
-                    <li><a>About Us</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/events">Events</Link></li>
+                    <li><Link to="/sermons">Sermons</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                    <li><Link to="/aboutus">About Us</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">

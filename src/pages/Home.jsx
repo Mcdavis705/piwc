@@ -72,6 +72,14 @@ function Home() {
                 </div>
             </section>
 
+            {/* Mission */}
+            <section className="py-20 bg-gray-100">
+                <div className="max-w-7xl mx-auto px-4 text-center">
+                    <h2 className="text-4xl font-bold mb-10 text-gray-700">Our Mission</h2>
+                    <h3>Missions and Visions</h3>
+                </div>
+            </section>
+
         </>
     )
 
