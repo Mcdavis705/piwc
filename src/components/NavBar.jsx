@@ -1,3 +1,7 @@
+import logo from '../assets/piwclogo.png'
+
+
+
 
 function Navbar() {
     return (
@@ -16,7 +20,10 @@ function Navbar() {
                         <li><a>About Us</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Piwc Bcn</a>
+                <aside className="flex items-center space-x-2">
+                    <img src={logo} alt="PIWC Logo" className="w-12 h-12 rounded-full object-cover" />
+                    <p className="text-lg font-semibold">Piwc Barcelona</p>
+                </aside>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
