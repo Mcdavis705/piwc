@@ -6,9 +6,7 @@ function Home() {
         <>
             {/* Hero Section */}
             <section
-                className="hero min-h-screen"
-            // style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
+                className="hero min-h-screen">
                 <div className="hero-overlay"></div>
                 <div className="hero-content text-neutral-content text-center">
                     <div className="max-w-md">

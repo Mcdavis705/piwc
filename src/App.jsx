@@ -12,9 +12,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col">
-        <Outlet />
+      <div className="min-h-screen pt-20 px-4">
+        <div className="max-w-4xl mx-auto w-full">
+          <Outlet />
+        </div>
       </div>
+
       <Footer />
     </>
   )

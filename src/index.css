@@ -4,7 +4,7 @@
 @layer base {
     html {
         font-family: 'Poppins', sans-serif;
-        background-image: url('/background.jpg');
+        /* background-image: url('/background.jpg'); */
         /* path relative to public */
         background-size: cover;
         /* cover the entire container */

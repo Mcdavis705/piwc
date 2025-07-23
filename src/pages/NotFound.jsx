@@ -5,9 +5,9 @@ function NotFound (){
 
     return(
         <section
-            className="min-h-screen"
+            className="min-h-screen flex flex-col max-w-4xl mx-auto w-full"
         >
-            <div className="overlay"></div>
+            <div className="overlay"></div> 
             <div className="hero-content text-neutral-content text-center">
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold">404</h1>

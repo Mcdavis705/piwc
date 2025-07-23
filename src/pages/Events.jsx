@@ -1,8 +1,8 @@
 
-function Events () {
+function Events() {
     return (
         <section
-            className="min-h-screen"
+            className="min-h-screen max-w-4xl mx-auto w-full"
         >
             <div className="overlay"></div>
             <div className="hero-content text-neutral-content text-center">
