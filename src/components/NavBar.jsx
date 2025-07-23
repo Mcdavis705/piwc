@@ -11,9 +11,9 @@ function Navbar() {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li><a>Events</a></li>
-                        <li><a>Membership</a></li>
-                        <li><a>Leadership</a></li>
-                        <li><a>Roster</a></li>
+                        <li><a>Sermons</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>About Us</a></li>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Piwc Bcn</a>
@@ -21,9 +21,9 @@ function Navbar() {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a>Events</a></li>
-                    <li><a>Membership</a></li>
-                    <li><a>Leadership</a></li>
-                    <li><a>Roster</a></li>
+                    <li><a>Sermons</a></li>
+                    <li><a>Gallery</a></li>
+                    <li><a>About Us</a></li>
                 </ul>
             </div>
             <div className="navbar-end">
