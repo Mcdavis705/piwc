@@ -12,6 +12,11 @@ import Gallery from './pages/Gallery.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import Admin from './pages/Admin.jsx'
 import NotFound from './pages/NotFound.jsx'
+import LogIn from './pages/LogIn.jsx'
+
+
+
+
 
 
 createRoot(document.getElementById('root')).render(
@@ -25,6 +30,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="gallery" element={<Gallery />} />
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="logIn" element={<LogIn />} />
           <Route path="*" element={<NotFound  />} />
         </Route>
       </Routes>

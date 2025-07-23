@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="min-h-screen flex flex-col">
         <Outlet />
       </div>
       <Footer />

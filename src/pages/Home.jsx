@@ -1,4 +1,5 @@
 import backgroundImage from '../assets/backgroundImage.jpg'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -15,7 +16,7 @@ function Home() {
                         <p className="mb-5">
                             A community of faith, hope, and love. Join us in worship and fellowship.
                         </p>
-                        <button className="btn btn-primary">Go to Admin Page</button>
+                        <Link className="btn btn-primary" to={'admin'}>Go to Admin page </Link>
                     </div>
                 </div>
             </section>

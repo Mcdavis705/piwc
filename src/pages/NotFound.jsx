@@ -4,7 +4,19 @@
 function NotFound (){
 
     return(
-        <h1>404 Page Not Found</h1>
+        <section
+            className="min-h-screen"
+        >
+            <div className="overlay"></div>
+            <div className="hero-content text-neutral-content text-center">
+                <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">404</h1>
+                    <p className="mb-5">
+                        Page Not Found
+                    </p>
+                </div>
+            </div>
+        </section>
     )
 }
 
