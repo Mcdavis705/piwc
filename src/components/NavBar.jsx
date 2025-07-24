@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
-        <div className="navbar fixed top-0 left-0 z-50 bg-black/30 backdrop-blur-md shadow-sm">
+        <div className="navbar fixed top-0 left-0 z-50 bg-black/50 backdrop-blur-md shadow-sm text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -14,7 +14,7 @@ function Navbar() {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-gray-700">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/events">Events</Link></li>
                         <li><Link to="/sermons">Sermons</Link></li>

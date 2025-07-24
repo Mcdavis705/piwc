@@ -4,7 +4,7 @@
 function Sermon() {
     return (
         <section
-            className="min-h-screen max-w-4xl mx-auto w-full"
+            className="min-h-screen max-w-4xl mx-auto w-full pt-20"
         >
             <div className="overlay"></div>
             <div className="hero-content text-neutral-content text-center">

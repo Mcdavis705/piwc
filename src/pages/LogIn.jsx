@@ -2,7 +2,7 @@
 
 function LogIn() {
     return (
-        <div class="flex justify-center">
+        <div class="flex justify-center mt-20">
             <div class="card w-96 bg-base-100 shadow-xl mt-20 mb-20">
                 <div class="card-body">
                     <h2 class="card-title">Login!</h2>

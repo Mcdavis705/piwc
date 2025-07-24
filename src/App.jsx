@@ -12,10 +12,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-20 px-4">
-        <div className="max-w-4xl mx-auto w-full">
+      <div className="min-h-screen ">
           <Outlet />
-        </div>
       </div>
 
       <Footer />
