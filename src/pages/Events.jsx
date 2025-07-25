@@ -6,7 +6,7 @@ function Events() {
         >
             <div className="overlay"></div>
             <div className="hero-content text-neutral-content text-center">
-                <div className="max-w-md">
+                <div className="max-w-md text-gray-700">
                     <h1 className="mb-5 text-5xl font-bold">Events</h1>
                     <p className="mb-5">
                         Events Page with card
