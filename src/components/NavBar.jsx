@@ -23,8 +23,10 @@ function Navbar() {
                     </ul>
                 </div>
                 <aside className="flex items-center space-x-2">
-                    <img src={logo} alt="PIWC Logo" className="w-12 h-12 rounded-full object-cover" />
-                    <p className="text-lg font-semibold">Piwc Barcelona</p>
+                    <Link to="/" className="flex items-center">
+                        <img src={logo} alt="PIWC Logo" className="w-12 h-12 rounded-full object-cover" />
+                        <p className="text-lg font-semibold">Piwc Barcelona</p>
+                    </Link>
                 </aside>
             </div>
             <div className="navbar-center hidden lg:flex">
