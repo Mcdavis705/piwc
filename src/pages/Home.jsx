@@ -146,6 +146,8 @@ function Home() {
                         {/* Service Times */}
                         <div class="bg-gray-100 p-6 rounded-xl shadow-sm transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl">
                             <h3 class="text-xl font-semibold text-gray-700 mb-4">Service Times</h3>
+                            <hr />
+                            <br />
                             <ul class="space-y-2 text-gray-600">
                                 <li><strong>Sun Church Service:</strong> 10:00 AM – 12:30 PM</li>
                                 <li><strong>Mon Glorious Hour Prayers:</strong> 11:00 AM – 12:00 AM</li>
@@ -158,7 +160,9 @@ function Home() {
                         {/* Location */}
                         <div class="bg-gray-100 p-6 rounded-xl shadow-sm transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl">
                             <h3 class="text-xl font-semibold text-gray-700 mb-4">Location</h3>
-                            <p class="text-gray-600 mb-4">
+                            <hr />
+                            <br />
+                            <p class="text-gray-600 mb-4 text-2xl">
                                 Rambla França, 53, Local 10. <br />
                                 08917 Badalona, Barcelona. <br />
                                 Spain
