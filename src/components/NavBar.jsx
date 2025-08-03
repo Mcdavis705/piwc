@@ -40,7 +40,6 @@ function Navbar() {
             </div>
             <div className="navbar-end">
                 <Link className="btn" to="/logIn">Log In</Link>
-
             </div>
         </div>
     )

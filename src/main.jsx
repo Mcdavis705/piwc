@@ -13,7 +13,7 @@ import AboutUs from './pages/user/AboutUs.jsx'
 import NotFound from './pages/user/NotFound.jsx'
 import LogIn from './pages/user/LogIn.jsx'
 
-import Admin from './pages/admin/MainPage.jsx'
+import Admin from './pages/admin/AdminMainPage.jsx'
 
 
 
