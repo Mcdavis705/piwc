@@ -1,4 +1,4 @@
-import backgroundImage from '../assets/backgroundImage.jpg';
+import backgroundImage from '../../assets/backgroundImage.jpg';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';

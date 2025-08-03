@@ -5,14 +5,15 @@ import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 import './index.css'
 import App from './App.jsx'
-import Home from './pages/Home.jsx'
-import Events from './pages/Events.jsx'
-import Sermons from './pages/Sermon.jsx'
-import Gallery from './pages/Gallery.jsx'
-import AboutUs from './pages/AboutUs.jsx'
-import Admin from './pages/Admin.jsx'
-import NotFound from './pages/NotFound.jsx'
-import LogIn from './pages/LogIn.jsx'
+import Home from './pages/user/Home.jsx'
+import Events from './pages/user/Events.jsx'
+import Sermons from './pages/user/Sermon.jsx'
+import Gallery from './pages/user/Gallery.jsx'
+import AboutUs from './pages/user/AboutUs.jsx'
+import NotFound from './pages/user/NotFound.jsx'
+import LogIn from './pages/user/LogIn.jsx'
+
+import Admin from './pages/admin/MainPage.jsx'
 
 
 
