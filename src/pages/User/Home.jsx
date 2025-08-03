@@ -18,6 +18,7 @@ function Home() {
         <>
             {/* Hero Section */}
             <section
+                
                 className="hero min-h-screen relative overflow-hidden"
                 style={{
                     backgroundImage: `url("/herobackground1.png")`,

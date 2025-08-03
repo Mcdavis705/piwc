@@ -1,0 +1,19 @@
+const events = [
+              {
+                title: 'Sunday Service',
+                desc: 'Every Sunday at 10:00 AM. Join us for spirit-filled worship and teaching.',
+                img: backgroundImage,
+              },
+              {
+                title: 'Youth Prayer Night',
+                desc: 'Friday at 7:00 PM — Come and grow spiritually with fellow youth.',
+                img: backgroundImage,
+              },
+              {
+                title: 'National Watchnight',
+                desc: 'Be the hands and feet of Christ through local missions and support programs.',
+                img: backgroundImage,
+              },
+            ];
+
+export default events;
