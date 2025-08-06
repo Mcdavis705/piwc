@@ -32,15 +32,14 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home/>}>
-          <Route path="events" element={<Events />} />
-          <Route path="sermons" element={<Sermons />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="aboutus" element={<AboutUs />} />
-          <Route path="admin" element={<Admin />} />
-          <Route path="logIn" element={<LogIn />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="events" element={<Events />} />
+        <Route path="sermons" element={<Sermons />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="aboutus" element={<AboutUs />} />
+        <Route path="admin" element={<Admin />} />
+        <Route path="logIn" element={<LogIn />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <div className="min-h-screen ">
         <Outlet />
