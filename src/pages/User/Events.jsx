@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import UserContext from "../../context/UserContext.js"
+import UserContext from "../../context/userContext.js";
 
 
 function Events() {
@@ -54,8 +54,8 @@ function Events() {
                             </div>
                         )}
                     </p>
+                    </div>
                 </div>
-            </div>
         </section>
     )
 }
