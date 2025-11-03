@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react'
-import { Outlet, Routes, Route } from 'react-router-dom'
+
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/NavBar.jsx'
-import Footer from './components/Footer.jsx'
+import Navbar from './components/mainPage/NavBar.jsx'
+import Footer from './components/mainPage/Footer.jsx'
 
 import UserContext from './context/userContext.js'
 
@@ -15,7 +15,9 @@ import AboutUs from './pages/user/AboutUs.jsx'
 import NotFound from './pages/user/NotFound.jsx'
 import LogIn from './pages/user/LogIn.jsx'
 
-
+import AdminDashboard from './pages/admin/AdminDashboard.jsx'
+import Members from './pages/admin/Members.jsx'
+import EventsPage from './pages/admin/Events.jsx'
 
 
 function App() {
@@ -26,10 +28,8 @@ function App() {
     token: 'omIVMg1s3VvQr4Nbe0CqK1W5fFWJHakGu4o0o-H2'
   }
 
-
   return (
     <>
-      <h1>Test</h1>
       <UserContext.Provider value={userData}>
         <Navbar />
         <Routes>
@@ -40,6 +40,10 @@ function App() {
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="logIn" element={<LogIn />} />
           <Route path="*" element={<NotFound />} />
+
+          <Route path="adminDashboard" element={<AdminDashboard />} />
+          <Route path="adminDashboard/members" element={<Members />} />
+          <Route path="adminDashboard/events" element={<EventsPage />} />
         </Routes>
         <Footer />
       </UserContext.Provider>

@@ -1,23 +1,20 @@
-import Hero from '../../components/Hero';
-import UpcomingEvents from '../../components/UpcomingEvents';
-import Services from '../../components/Services';
-
-
-import backgroundImage from '../../assets/backgroundImage.jpg';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import Hero from '../../components/mainPage/Hero';
+import UpcomingServices from '../../components/mainPage/UpcomingServices';
+import FeaturedEvents from '../../components/mainPage/FeaturedEvents';
+import MissionValues from '../../components/mainPage/MissionValues';
+import ContactSection from '../../components/mainPage/ContactSection';
 
 
 function HomePage() {
 
     return (
-        <>
+        <div className="pt-20">
             <Hero />
-            <UpcomingEvents />
-            <Services />
-            
-        </>
+            <UpcomingServices />
+            <FeaturedEvents />
+            <MissionValues />
+            <ContactSection />
+        </div>
     );
 }
 
