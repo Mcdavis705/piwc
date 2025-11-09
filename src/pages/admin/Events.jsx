@@ -1,7 +1,7 @@
 import SideBar from '../../components/admin/sidebar2';
 
 import React, { useState, useContext, useEffect } from 'react';
-import UserContext from '../../context/userContext';
+import UserContext from '../../contexts/userContext';
 
 import { Plus, Edit, Trash2 } from 'lucide-react';
 

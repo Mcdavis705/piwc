@@ -13,6 +13,7 @@ function NotFound (){
                     <h1 className="mb-5 text-5xl font-bold">404</h1>
                     <p className="mb-5">
                         Page Not Found
+                        <hr/>
                     </p>
                 </div>
             </div>
