@@ -1,12 +1,14 @@
 // src/components/about/LeadershipSection.js
 import React, { useContext, useState, useEffect } from 'react';
 import UserContext from '../../../contexts/userContext';
+import detailsData from '../../../data/leadership.json';
+
 
 // Sub-Component for a single Leader's Profile Card
 const LeaderProfileCard = ({ name, role, description, imageUrl }) => (
   <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg transition duration-300 hover:shadow-lg">
     <img 
-      src={imageUrl} 
+      src={detailsData.leadership.find(leader => leader.name === name)?.image || imageUrl} 
       alt={name} 
       className="w-24 h-24 rounded-full mb-4 object-cover border-4 border-indigo-100"
     />

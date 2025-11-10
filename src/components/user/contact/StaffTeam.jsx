@@ -2,13 +2,7 @@
 import React, { use, useEffect, useState, useContext  } from 'react';
 import UserContext from '../../../contexts/userContext';
 import { Mail } from 'lucide-react';
-
-// const staff = [
-//   { name: 'Pastor David Lee', role: 'Senior Pastor', email: 'david@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=1' },
-//   { name: 'Sarah Chen', role: 'Community Outreach Coordinator', email: 'sarah@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=3' },
-//   { name: 'Michael Davis', role: 'Worship Director', email: 'michael@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=11' },
-//   { name: 'Emily White', role: 'Children & Youth Ministry Leader', email: 'emily@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=15' },
-// ];
+import detailsData from '../../../data/leadership.json';
 
 function StaffTeam() {
   const [staff, setStaff] = useState([]);
@@ -47,7 +41,7 @@ function StaffTeam() {
         {staff.map((member, index) => (
           <div key={index} className="flex items-center justify-between border-b border-gray-100 pb-3 last:border-b-0">
             <div className="flex items-center">
-              <img src={member.avatar} alt={member.name} className="h-10 w-10 rounded-full mr-4" />
+              <img src={detailsData.leadership.find(leader => leader.name === member.name)?.image} alt={member.name} className="h-10 w-10 rounded-full mr-4" />
               <div>
                 <p className="text-gray-900 font-semibold">{member.name}</p>
                 <p className="text-sm text-gray-500">{member.role}</p>

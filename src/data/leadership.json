@@ -1,0 +1,19 @@
+{
+  "leadership": [
+    {
+      "name": "Eld. Emmanuel Koduah",
+      "position": "Presiding Elder",
+      "image": "./koduah.jpg"
+    },
+    {
+      "name": "Dr. Daniel Kwakye",
+      "position": "Secretary",
+      "image": "./daniel.png"
+    },
+    {
+      "name": "Dr. Annete Abiyesuku",
+      "position": "Deputy Secretary",
+      "image": "./mc.jpg"
+    }
+  ]
+}
