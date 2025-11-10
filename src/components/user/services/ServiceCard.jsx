@@ -5,23 +5,20 @@ import { Calendar, Mic, MapPin, Clock } from 'lucide-react';
 // Single Service Card (with modern lift + simple fade-in)
 const ServiceCard = ({ service, index }) => {
   
-  // Destructure service details (using optional chaining for safety)
-  const title = service.title || 'Weekly Service';
-  const serviceDay = service.serviceDay || 'Sunday';
-  const time = service.time || '10:00 AM';
-  const location = service.location || 'Main Sanctuary';
-  const host = service.host || 'Pastor Smith';
-  const description = service.description || 'Our primary gathering featuring dynamic worship, inspiring music and a timely message. Open to all ages.';
+  const title = service.title ;
+  const serviceDay = service.serviceDay;
+  const time = service.time ;
+  const location = service.location ;
+  const host = service.host ;
+  const description = service.description ;
   const isHighlighted = service.isHighlighted || index === 0;
 
   return (
     <motion.div
-      // MODIFIED: Removed y: 40 from initial state to prevent upward push
       initial={{ opacity: 0 }} 
-      // MODIFIED: Removed y: 0 from whileInView state, as y is no longer needed
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, delay: index * 0.15 }} // Increased duration slightly for slower fade
+      transition={{ duration: 0.8, delay: index * 0.15 }} 
 
       // NEW ANIMATION: Lift, shadow pulse, and scale
       whileHover={{ 
@@ -37,11 +34,6 @@ const ServiceCard = ({ service, index }) => {
         }
       `}
     >
-      {/* Icon/Image Placeholder */}
-      <div className="flex items-center space-x-3 mb-3 text-indigo-600">
-        <Calendar className="w-5 h-5"/>
-        <Mic className="w-5 h-5"/>
-      </div>
 
       <div className="flex flex-col mb-3">
         <h4 className="text-xl font-bold text-gray-800">{title}</h4>

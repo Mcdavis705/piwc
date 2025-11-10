@@ -1,21 +1,11 @@
 import React, { useEffect, useContext, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
-// NOTE: Placeholder context and mock data
-const UserContext = React.createContext({ token: 'mock-token-123' });
+import UserContext from '../../../contexts/userContext';
 
-const mockServices = [
-  { serviceDay: 'Sunday', time: '10:00 AM', title: 'Main Worship Service', description: 'Our primary gathering featuring dynamic worship, inspiring sermons, and community connection. Open to all ages.', location: 'Main Sanctuary', host: 'Pastor Smith', isHighlighted: true },
-  { serviceDay: 'Wednesday', time: '7:00 PM', title: 'Midweek Bible Study', description: 'Deep dive into Scripture, group discussion, and prayer time to strengthen your faith foundation. Focus on John 3:16.', location: 'Fellowship Hall', host: 'Elder Chen', isHighlighted: false },
-  { serviceDay: 'Friday', time: '6:30 PM', title: 'Youth & Young Adults', description: 'A relaxed and engaging environment for young people to build community and explore faith relevant to their lives. Games and snacks provided!', location: 'Youth Center', host: 'David Lee', isHighlighted: false },
-  { serviceDay: 'Saturday', time: '9:00 AM', title: 'Men’s Prayer Breakfast', description: 'Weekly time dedicated to fellowship, prayer, and sharing a meal together. Coffee is always hot.', location: 'Church Cafe', host: 'Deacon Jones', isHighlighted: false },
-  { serviceDay: 'Tuesday', time: '9:30 AM', title: 'Women’s Fellowship', description: 'Connecting women of all ages for encouragement, discipleship, and shared ministry projects. Childcare available.', location: 'Room 201', host: 'Sarah Chen', isHighlighted: false },
-  { serviceDay: 'Sunday', time: '6:00 PM', title: 'Evening Contemplation', description: 'A quieter, reflective service focused on deep prayer and meditation. Perfect for ending the week.', location: 'Prayer Chapel', host: 'Minister Ray', isHighlighted: false },
-];
 
 function ServiceGrid({ searchTerm }) {
-  // Use mock token if context isn't fully set up for the Canvas environment
-  const { token } = useContext(UserContext) || { token: 'mock-token-default' };
+  const { token } = useContext(UserContext);
   
   const urlApi = 'https://app.nocodb.com/api/v2/tables/m3knub05rlo6f8n/records';
   
@@ -24,9 +14,8 @@ function ServiceGrid({ searchTerm }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    
-    // Simulate API Fetch
-    if (token && token !== 'mock-token-default') {
+
+    if (token) {
       fetch(urlApi, {
         method: 'GET',
         headers: {
@@ -41,21 +30,19 @@ function ServiceGrid({ searchTerm }) {
             return response.json();
         })
         .then(data => {
-            setServices(data.list || mockServices);
+            setServices(data.list);
             setIsLoading(false);
         })
         .catch(err => {
             console.error('API Fetch Error:', err);
-            setError('Could not fetch data. Displaying mock services.');
-            setServices(mockServices);
+            setError('Could not fetch data. ');
             setIsLoading(false);
         });
     } else {
-        // Use mock data immediately if token is missing
-        setServices(mockServices);
         setIsLoading(false);
     }
   }, [token]);
+  console.log(token);
 
   // Filtering Logic
   const filteredServices = services.filter(service => {

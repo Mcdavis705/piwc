@@ -1,22 +1,45 @@
 
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Search, ChevronDown, Filter, SlidersHorizontal } from 'lucide-react';
 import SermonCard from '../../components/user/mainpage/SermonCard.jsx';
-import Pagination from '../../components/user/Pagination.jsx'; 
+import UserContext from '../../contexts/userContext.js';
 
-// --- DUMMY DATA ---
-const DUMMY_SERMONS = [
-  { id: 1, title: 'The Power of Forgiveness', speaker: 'Pastor John Davis', date: 'Jul 28, 2025', category: 'Grace', link: '#', imageUrl: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=Forgiveness' },
-  { id: 2, title: 'Living a Life of Service', speaker: 'Rev. Dr. A. Lee', date: 'Jul 21, 2025', category: 'Community', link: '#', imageUrl: 'https://via.placeholder.com/600x400/9ca3af/ffffff?text=Service' },
-  { id: 3, title: 'Finding Joy in the Everyday', speaker: 'Pastor John Davis', date: 'Jul 14, 2025', category: 'Faith', link: '#', imageUrl: 'https://via.placeholder.com/600x400/34d399/ffffff?text=Joy' },
-  { id: 4, title: 'Understanding the Scriptures', speaker: 'Rev. T. Wilson', date: 'Jul 07, 2025', category: 'Study', link: '#', imageUrl: 'https://via.placeholder.com/600x400/fcd34d/ffffff?text=Scriptures' },
-  { id: 5, title: 'Building Stronger Families', speaker: 'Pastor John Davis', date: 'Jun 30, 2025', category: 'Family', link: '#', imageUrl: 'https://via.placeholder.com/600x400/fb923c/ffffff?text=Family' },
-  { id: 6, title: 'Overcoming Doubt', speaker: 'Rev. Dr. A. Lee', date: 'Jun 23, 2025', category: 'Faith', link: '#', imageUrl: 'https://via.placeholder.com/600x400/a78bfa/ffffff?text=Doubt' },
-  { id: 7, title: 'The Call to Missions', speaker: 'Guest Speaker K.', date: 'Jun 16, 2025', category: 'Missions', link: '#', imageUrl: 'https://via.placeholder.com/600x400/84cc16/ffffff?text=Missions' },
-  { id: 8, title: 'The Lord is My Shepherd', speaker: 'Pastor John Davis', date: 'Jun 09, 2025', category: 'Grace', link: '#', imageUrl: 'https://via.placeholder.com/600x400/f472b6/ffffff?text=Shepherd' },
-];
+import Pagination from '../../components/user/Pagination.jsx'; 
+import { image } from 'framer-motion/client';
+
+// // --- DUMMY DATA ---
+// const DUMMY_SERMONS = [
+//   { id: 1, title: 'The Power of Forgiveness', speaker: 'Pastor John Davis', date: 'Jul 28, 2025', category: 'Grace', link: '#', imageUrl: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=Forgiveness' },
+//   { id: 2, title: 'Living a Life of Service', speaker: 'Rev. Dr. A. Lee', date: 'Jul 21, 2025', category: 'Community', link: '#', imageUrl: 'https://via.placeholder.com/600x400/9ca3af/ffffff?text=Service' },
+//   { id: 3, title: 'Finding Joy in the Everyday', speaker: 'Pastor John Davis', date: 'Jul 14, 2025', category: 'Faith', link: '#', imageUrl: 'https://via.placeholder.com/600x400/34d399/ffffff?text=Joy' },
+//   { id: 4, title: 'Understanding the Scriptures', speaker: 'Rev. T. Wilson', date: 'Jul 07, 2025', category: 'Study', link: '#', imageUrl: 'https://via.placeholder.com/600x400/fcd34d/ffffff?text=Scriptures' },
+//   { id: 5, title: 'Building Stronger Families', speaker: 'Pastor John Davis', date: 'Jun 30, 2025', category: 'Family', link: '#', imageUrl: 'https://via.placeholder.com/600x400/fb923c/ffffff?text=Family' },
+//   { id: 6, title: 'Overcoming Doubt', speaker: 'Rev. Dr. A. Lee', date: 'Jun 23, 2025', category: 'Faith', link: '#', imageUrl: 'https://via.placeholder.com/600x400/a78bfa/ffffff?text=Doubt' },
+//   { id: 7, title: 'The Call to Missions', speaker: 'Guest Speaker K.', date: 'Jun 16, 2025', category: 'Missions', link: '#', imageUrl: 'https://via.placeholder.com/600x400/84cc16/ffffff?text=Missions' },
+//   { id: 8, title: 'The Lord is My Shepherd', speaker: 'Pastor John Davis', date: 'Jun 09, 2025', category: 'Grace', link: '#', imageUrl: 'https://via.placeholder.com/600x400/f472b6/ffffff?text=Shepherd' },
+// ];
 
 function SermonsPage() {
+  const { token } = useContext(UserContext);
+  const urlApi = "https://app.nocodb.com/api/v2/tables/mbakctrrlxs0ky6/records";
+  const [sermons, setSermons] = useState([]);
+
+  useEffect(() => {
+    if (!token) return;
+
+    fetch(urlApi, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "xc-token": token,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setSermons(data.list || []))
+      .catch((error) => console.error("Error fetching sermons:", error));
+  }, [token]);
+
+
   const [searchTerm, setSearchTerm] = React.useState('');
   const [currentPage, setCurrentPage] = React.useState(1);
   const totalPages = 4; // Hardcoded total pages for demonstration
@@ -27,6 +50,7 @@ function SermonsPage() {
       //fetch data for the new page here
     }
   };
+
 
   return (
     <div className="sermons-archive-page pt-20 max-w-7xl mx-auto">
@@ -70,8 +94,8 @@ function SermonsPage() {
 
       {/* Sermons Grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {DUMMY_SERMONS.map(sermon => (
-          <SermonCard key={sermon.id} sermon={sermon} />
+        {sermons.map((sermon, index) => (
+          <SermonCard key={sermon.id || index} sermon={sermon} index={index} />
         ))}
       </section>
 
