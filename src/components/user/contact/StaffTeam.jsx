@@ -1,15 +1,45 @@
 // src/components/contact/StaffTeam.js
-import React from 'react';
+import React, { use, useEffect, useState, useContext  } from 'react';
+import UserContext from '../../../contexts/userContext';
 import { Mail } from 'lucide-react';
 
-const staff = [
-  { name: 'Pastor David Lee', role: 'Senior Pastor', email: 'david@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=1' },
-  { name: 'Sarah Chen', role: 'Community Outreach Coordinator', email: 'sarah@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=3' },
-  { name: 'Michael Davis', role: 'Worship Director', email: 'michael@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=11' },
-  { name: 'Emily White', role: 'Children & Youth Ministry Leader', email: 'emily@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=15' },
-];
+// const staff = [
+//   { name: 'Pastor David Lee', role: 'Senior Pastor', email: 'david@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=1' },
+//   { name: 'Sarah Chen', role: 'Community Outreach Coordinator', email: 'sarah@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=3' },
+//   { name: 'Michael Davis', role: 'Worship Director', email: 'michael@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=11' },
+//   { name: 'Emily White', role: 'Children & Youth Ministry Leader', email: 'emily@faithconnect.org', avatar: 'https://i.pravatar.cc/150?img=15' },
+// ];
 
 function StaffTeam() {
+  const [staff, setStaff] = useState([]);
+
+  const urlApi = 'https://app.nocodb.com/api/v2/tables/m0yb3cbgelblv5f/records';
+  const { token } = useContext(UserContext);
+
+  useEffect(() => {
+    if (token) {
+      fetch(urlApi, {
+        method: 'GET',
+        headers: {
+          "content-type": 'application/json',
+          'xc-token': token
+        },
+      })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setStaff(data.list);
+        })
+        .catch(err => {
+            console.error('API Fetch Error:', err);
+        });
+    }
+  }, [token]);
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md h-full">
       <h3 className="text-xl font-bold text-gray-900 mb-6">Our Staff Team</h3>

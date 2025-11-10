@@ -4,7 +4,7 @@ import { Search, ChevronDown, Filter, SlidersHorizontal } from 'lucide-react';
 import SermonCard from '../../components/user/mainpage/SermonCard.jsx';
 import UserContext from '../../contexts/userContext.js';
 
-import Pagination from '../../components/user/Pagination.jsx'; 
+import Pagination from '../../components/user/Pagination.jsx';
 import { image } from 'framer-motion/client';
 
 // // --- DUMMY DATA ---
@@ -40,8 +40,9 @@ function SermonsPage() {
   }, [token]);
 
 
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const [currentPage, setCurrentPage] = React.useState(1);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 4; // Hardcoded total pages for demonstration
 
   const handlePageChange = (page) => {
@@ -50,6 +51,11 @@ function SermonsPage() {
       //fetch data for the new page here
     }
   };
+
+  const filteredSermons = sermons.filter(sermon => {
+    const searchString = `${sermon.title} ${sermon.description} ${sermon.date} ${sermon.speaker} ${sermon.category}`.toLowerCase();
+    return searchString.includes(searchTerm.toLowerCase());
+  });
 
 
   return (
@@ -64,7 +70,7 @@ function SermonsPage() {
 
       {/* Search, Filter, Sort Controls */}
       <section className="mb-10 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-        
+
         {/* Search Input */}
         <div className="relative flex-grow w-full md:w-auto">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -94,14 +100,14 @@ function SermonsPage() {
 
       {/* Sermons Grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {sermons.map((sermon, index) => (
+        {filteredSermons.map((sermon, index) => (
           <SermonCard key={sermon.id || index} sermon={sermon} index={index} />
         ))}
       </section>
 
       {/* Pagination */}
       <section className="pb-8">
-        <Pagination 
+        <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}

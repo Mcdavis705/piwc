@@ -1,5 +1,6 @@
 // src/components/about/LeadershipSection.js
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import UserContext from '../../../contexts/userContext';
 
 // Sub-Component for a single Leader's Profile Card
 const LeaderProfileCard = ({ name, role, description, imageUrl }) => (
@@ -15,28 +16,38 @@ const LeaderProfileCard = ({ name, role, description, imageUrl }) => (
   </div>
 );
 
-const leaders = [
-  {
-    name: 'Pastor John Smith',
-    role: 'Lead Pastor',
-    description: 'Pastor John has served FaithConnect for over 15 years, leading our community with wisdom, love, and compassion. His sermons inspire and challenge us to live out our faith daily.',
-    imageUrl: 'https://i.pravatar.cc/150?img=1',
-  },
-  {
-    name: 'Elder Sarah Chen',
-    role: 'Community Outreach Director',
-    description: 'Sarah leads our efforts to serve the wider community, organizing impactful volunteer programs, address local needs, and spread hope.',
-    imageUrl: 'https://i.pravatar.cc/150?img=3',
-  },
-  {
-    name: 'Minister David Lee',
-    role: 'Youth Minister',
-    description: 'David is passionate about nurturing the next generation of believers, creating programs and events that engage and empower our youth.',
-    imageUrl: 'https://i.pravatar.cc/150?img=11',
-  },
-];
+// Main Leadership Section  
 
 function LeadershipSection() {
+
+  const urlApi = 'https://app.nocodb.com/api/v2/tables/m0yb3cbgelblv5f/records';
+  const { token } = useContext(UserContext);
+  const [leaders, setLeaders] = useState([]);
+
+  useEffect(() => {
+    if (token) {
+      fetch(urlApi, {
+        method: 'GET',
+        headers: {
+          "content-type": 'application/json',
+          'xc-token': token
+        },
+      })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setLeaders(data.list);
+        })
+        .catch(err => {
+            console.error('API Fetch Error:', err);
+        });
+    }
+  }, [token]);
+
   return (
     <section className="py-12">
       <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-4">Our Leadership</h2>

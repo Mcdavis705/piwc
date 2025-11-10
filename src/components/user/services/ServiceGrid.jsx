@@ -42,7 +42,7 @@ function ServiceGrid({ searchTerm }) {
         setIsLoading(false);
     }
   }, [token]);
-  console.log(token);
+
 
   // Filtering Logic
   const filteredServices = services.filter(service => {

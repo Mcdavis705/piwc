@@ -4,20 +4,15 @@ import UserContext from "../../../contexts/userContext";
 import { MapPin, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion'; // Removed motion values/transforms
 
-// Card for a single Featured Event (Simple Lift Animation)
 const EventCard = ({ title, date, location, description, imageUrl, index }) => {
-  
-  // NOTE: Removed all parallax logic (x, y, rotateX, rotateY, handleMouseMove, resetTilt)
 
   return (
     <motion.div
-      // --- ENTRANCE ANIMATION (Simple Fade-in) ---
       initial={{ opacity: 0 }} 
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, delay: index * 0.12 }}
       
-      // --- HOVER ANIMATION (Lift and Shadow Pulse) ---
       whileHover={{ 
         scale: 1.05, // Slight increase in lift compared to services for impact
         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(99, 102, 241, 0.3)", // Indigo shadow/ring

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Calendar, Mic, MapPin, Clock } from 'lucide-react';
 
-// Single Service Card (with modern lift + simple fade-in)
 const ServiceCard = ({ service, index }) => {
   
   const title = service.title ;
@@ -20,7 +19,6 @@ const ServiceCard = ({ service, index }) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay: index * 0.15 }} 
 
-      // NEW ANIMATION: Lift, shadow pulse, and scale
       whileHover={{ 
         scale: 1.03, // Gentle lift
         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(99, 102, 241, 0.3)", // Soft shadow and ring pulse
@@ -38,9 +36,7 @@ const ServiceCard = ({ service, index }) => {
       <div className="flex flex-col mb-3">
         <h4 className="text-xl font-bold text-gray-800">{title}</h4>
       </div>
-      
-      {/* Detailed Metadata Block */}
-      <div className="space-y-2 mb-4 text-gray-700 flex-shrink-0">
+            <div className="space-y-2 mb-4 text-gray-700 flex-shrink-0">
         <p className="flex items-center text-sm">
             <Clock className="w-4 h-4 mr-2 text-indigo-500 flex-shrink-0" />
             <span className="font-semibold">{serviceDay}</span> at {time}
