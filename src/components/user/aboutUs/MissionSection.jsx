@@ -1,30 +1,39 @@
 // src/components/about/MissionSection.js
 import React from 'react';
+import bannerImage from '/smallbanner.jpg'; 
 
 function MissionSection() {
-  const imageUrl = "https://via.placeholder.com/600x400?text=Hands+Reaching+Out"; // Placeholder image
+  const imageUrl = bannerImage;
 
   return (
     <section className="py-12 border-b border-gray-200">
-      <h2 className="text-3xl font-extrabold text-gray-900 mb-8">Our Mission</h2>
-      
+      <h2 className="text-3xl font-extrabold text-gray-900 mb-8">Mission & Vision</h2>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/* Text Column */}
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">Guiding Hearts, Transforming Lives</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Mission</h3>
           <p className="text-gray-600 mb-4">
-            FaithConnect's mission is to empower individuals to live lives of purpose and joy through the teachings of Christ. We are committed to nurturing spiritual growth, fostering genuine community, and encouraging lifelong learning. We believe that true faith is active, inspiring us to make a positive impact both within our congregation and in the broader world.
+            We exist to build responsible, self-sustaining churches filled with Spirit-led believers of integrity who positively impact their communities.
           </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Vision</h3>
           <p className="text-gray-600">
-            Our values include compassion, integrity, and grace in all our interactions. We strive to create an inclusive environment where everyone feels welcomed, valued, and encouraged to explore their faith journey.
+            To be a global Pentecostal church that is culturally relevant and passionate about evangelism, church planting, discipleship, and holistic ministry.
           </p>
+
+          <a
+            href="https://www.copspain.org/mission"
+            className="flex items-center italic text-indigo-600 font-semibold hover:text-indigo-800 transition duration-150 w-fit"
+          >
+            Click here for more about our Mission & Vision
+          </a>
         </div>
-        
+
         {/* Image Column */}
         <div className="w-full h-full lg:h-64 rounded-lg overflow-hidden shadow-lg">
-          <img 
-            src={imageUrl} 
-            alt="Hands reaching out in service" 
+          <img
+            src={imageUrl}
+            alt="Hands reaching out in service"
             className="w-full h-full object-cover"
           />
         </div>

@@ -43,12 +43,30 @@ function NavBar() {
         </button>
 
         {/* Mobile menu */}
-        <button className="md:hidden">
-          <Menu className="w-6 h-6 text-gray-700" />
-        </button>
+        <div className="dropdown dropdown-mobile md:hidden ">
+          <button className="md:hidden">
+            <Menu className="w-6 h-6 text-gray-700" />
+          </button>
+          <ul
+            tabIndex="-1"
+            className="menu menu-sm dropdown-content absolute left-1/2 -translate-x-1/2 mt-3 w-52 p-2 bg-base-100 rounded-box shadow z-[1]"
+          >
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <Link
+                  to={item.path}
+                  className="text-gray-600 hover:text-indigo-600 transition duration-150"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </header>
   );
 }
+
 
 export default NavBar;

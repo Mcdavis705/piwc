@@ -5,7 +5,7 @@ import CalendarView from '../../components/user/events/CalendarView.jsx';
 
 function EventsPage() {
   return (
-    <div className="events-page pt-4">
+    <div className="events-page pt-20 min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Events Calendar</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
