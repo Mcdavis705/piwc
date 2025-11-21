@@ -1,11 +1,11 @@
 import { useEffect, useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../../../contexts/userContext';
 import { motion } from "framer-motion"; // Removed useMotionValue, useTransform
 
 // Single Service Card (with simple fade-in and hover)
 const ServiceCard = ({ title, serviceDay, time, description, isHighlighted, index }) => {
   
-  // NOTE: All parallax state (x, y, rotateX, rotateY) and functions (handleMouseMove, resetTilt) have been removed.
 
   return (
     <motion.div
@@ -36,7 +36,7 @@ const ServiceCard = ({ title, serviceDay, time, description, isHighlighted, inde
       </div>
 
       <button className="w-full py-1.5 bg-indigo-600 text-white text-sm font-semibold rounded-md mb-4 hover:bg-indigo-700 transition-all">
-        More Info
+        <Link to={`/services/`}>More Info</Link>
       </button>
 
       <p className="text-sm text-gray-500 line-clamp-2">{description}</p>

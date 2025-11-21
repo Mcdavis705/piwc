@@ -50,12 +50,18 @@ function Hero() {
             transition={{ duration: 1.0, delay: 0.45 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <button className="px-8 py-3 bg-white text-indigo-900 font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 active:scale-95 transition-all duration-200">
-              Visit Us This Sunday
+            <button
+              className="px-8 py-3 bg-white text-indigo-900 font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 active:scale-95 transition-all duration-200"
+            >
+              <Link to="/contact">
+                Visit Us This Sunday
+              </Link>
             </button>
 
             <button className="px-8 py-3 bg-transparent text-white font-semibold rounded-lg border border-white hover:bg-white/15 hover:shadow-lg active:scale-95 transition-all duration-200">
-              Join Our Community
+              <Link to="/aboutus">
+                Join Our Community
+              </Link>
             </button>
           </motion.div>
 

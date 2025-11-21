@@ -1,15 +1,16 @@
+import { label } from 'framer-motion/client';
 import piwclogo from '../../assets/piwclogo.png'
 import { Facebook, Twitter, Instagram, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const footerLinks = {
-  'Quick Links': ['Services', 'Events', 'Sermons', 'Give Online'],
-  'Community': ['Join a Group', 'Volunteer', 'Prayer Requests', 'Missions'],
-  'Support': ['Contact Us', 'FAQ', 'Privacy Policy', 'Terms of Use'],
+  'Quick Links': [{label: 'Services', path: '/services'}, {label: 'Events', path: '/events'}, {label: 'Sermons', path: '/sermonsPage'}, {label: 'About Us', path: '/aboutus'}],
+  'Support': [{label: 'Contact Us', path: '/contact'}, {label: 'FAQ', path: '/faq'}, {label: 'Privacy Policy', path: '/privacy'}, {label: 'Terms of Use', path: '/terms'}],
 };
 
 function Footer() {
   return (
-    <footer className="bg-white py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+    <footer className="bg-white py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Top Section: Logo and Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8">
@@ -27,13 +28,13 @@ function Footer() {
                 <h4 className="font-bold text-gray-800 mb-3">{category}</h4>
                 <ul className="space-y-2">
                   {links.map((link) => (
-                    <li key={link}>
-                      <a 
-                        href={`#${link.toLowerCase().replace(/\s/g, '-')}`}
+                    <li key={link.label}>
+                      <Link
+                        to={link.path}
                         className="text-gray-600 hover:text-indigo-600 transition duration-150"
                       >
-                        {link}
-                      </a>
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
