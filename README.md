@@ -1,77 +1,185 @@
 # PIWC Church Management App
 
-A modern church management system built for **PIWC Barcelona** to streamline administration, improve communication, and enhance the overall management of church operations through a centralized digital platform.
+A modern church management application built for **PIWC Barcelona**, designed to streamline internal church operations while providing a professional public-facing platform for visitors and members.
+
+This application combines a secure **Admin Dashboard** for leadership and ministries with a **Public Website** where anyone can access key information about the church.
 
 ---
 
-## 📖 Overview
+## ✨ Overview
 
-The PIWC Church Management App is a modern web platform designed to serve both the **church leadership (admin)** and the **general public**.
+The PIWC Church Management App is a web-based platform that supports the digital transformation of church administration. It allows efficient management of members, events, services, communications, and content — all in one central system.
 
-- The **public-facing section** allows anyone to view essential information about PIWC Barcelona, including annoucements, services, events, and contact details.
-- The **admin session** provides a secure internal dashboard for authorized personnel to manage church operations, members, events, and internal data.
+It is separated into two main areas:
 
-This dual-structure approach ensures transparency and accessibility for visitors while maintaining secure and efficient management tools for church leadership.
-
----
-
-## 🚀 Features
-
-### 🌍 Public Section (Accessible to Everyone)
-
-- About Us page  
-- Mission & Vision  
-- Church leadership overview  
-- Service times & programmes  
-- Upcoming events  
-- Contact information  
-- Announcements and updates  
-
-### 🔐 Admin Section (Private Dashboard)
-
-- Member registration and management  
-- Leadership and department management  
-- Event planning and scheduling  
-- Task and responsibility tracking  
-- Church announcements management  
-- Attendance tracking  
-- Secure admin authentication   
+* 🌍 **Public Session** – Open access for the general public
+* 🔐 **Admin Session** – Restricted access for church administrators
 
 ---
 
-## 🛠 Tech Stack
+## 🌍 Public Session Features
 
-- React  
-- Vite  
-- Tailwind CSS  
-- DaisyUI  
-- JavaScript (ES6+)  
-- ESLint & Prettier  
+Accessible to anyone without authentication. This section represents the church online and provides essential information including:
+
+* Church Overview (About Us)
+* Mission & Vision
+* Contact Information
+* Leadership Information
+* Upcoming Services & Events
+* Announcements
+* Service Times & Location Map
+* Visitor Information
+
+This section is designed to be modern, responsive, and informative, serving as the digital front door of PIWC Barcelona.
 
 ---
 
-## ⚙️ Installation & Setup
+## 🔐 Admin Session Features
 
-To run this project locally:
+A secure dashboard for authorized church staff and leadership. Features include:
 
-1. Clone the repository
+* Member Management
+* Attendance Tracking
+* Event Management
+* Task Management
+* Media Upload & Content Control
+* Announcements Management
+* Dashboard Analytics
+* Leadership Directory Management
+
+Admins can create, update, and delete content that reflects on the public-facing side of the platform.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+
+* React / HTML / CSS
+* Tailwind CSS
+* DaisyUI
+* JavaScript
+
+**Backend / Database:**
+
+* NocoDB (Headless No-Code Database)
+
+**Hosting:**
+
+* GitHub Pages (Frontend)
+* NocoDB (Self-hosted or Cloud)
+
+---
+
+## 👥 User Roles
+
+* **Admin** – Full system control and content management
+* **Staff** – Limited access to specific modules
+* **Public User** – View-only access to general church information
+
+---
+
+## 🔒 Security
+
+* Secure Admin Authentication
+* Protected API Routes
+* Role-Based Permissions
+* Encrypted Credentials
+
+---
+
+## 🚀 Deployment
+
+### Frontend Deployment (GitHub Pages)
+
+1. Build your project:
+
 ```bash
-git clone https://github.com/your-username/piwc-church-app.git
+npm run build
+```
 
-2. Navigate to the project directory
+2. Install GitHub Pages:
+
 ```bash
-cd piwc
+npm install gh-pages --save-dev
+```
 
-3. Install the dependencies
+3. Add to `package.json`:
+
+```json
+"homepage": "https://your-username.github.io/your-repo-name"
+```
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+
+4. Deploy:
+
 ```bash
-npm install
+npm run deploy
+```
 
-4. Run the server
-```bash
-npm run dev
+### Backend (NocoDB)
 
-5. Open your browser and visit:
-```bash
-http://localhost:5173
+* Set up a NocoDB instance
+* Create tables for Members, Events, Services, Finances, etc.
+* Connect frontend via REST API
+* Secure with environment variables and tokens
 
+---
 
+## 📁 Project Structure
+
+```
+piwc-app/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── admin/
+│   ├── assets/
+│   └── utils/
+├── .env
+├── package.json
+└── README.md
+```
+
+---
+
+## 📌 Future Roadmap
+
+* Online Giving Integration
+* Member Self-Service Portal
+* SMS & Email Notifications
+* Event Registration System
+* Mobile App Version
+* Sermon Streaming Module
+
+---
+
+## 🤝 Contribution Guidelines
+
+This is a private application for PIWC Barcelona. Contributions are not considered for now.
+
+---
+
+## 📄 License
+
+This project is private and proprietary. All rights reserved by PIWC Barcelona.
+
+---
+
+## 📞 Contact
+
+**PIWC Barcelona**
+Email: [barcelonapiwc@gmail.com](mailto:barcelonapiwc@gmail.com)
+Location: Barcelona, Spain
+
+---
+
+> Built with passion to support church growth, organization, and digital excellence.
