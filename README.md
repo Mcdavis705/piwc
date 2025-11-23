@@ -1,12 +1,77 @@
-# React + Vite
+# PIWC Church Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern church management system built for **PIWC Barcelona** to streamline administration, improve communication, and enhance the overall management of church operations through a centralized digital platform.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview
 
-## Expanding the ESLint configuration
+The PIWC Church Management App is a modern web platform designed to serve both the **church leadership (admin)** and the **general public**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- The **public-facing section** allows anyone to view essential information about PIWC Barcelona, including annoucements, services, events, and contact details.
+- The **admin session** provides a secure internal dashboard for authorized personnel to manage church operations, members, events, and internal data.
+
+This dual-structure approach ensures transparency and accessibility for visitors while maintaining secure and efficient management tools for church leadership.
+
+---
+
+## 🚀 Features
+
+### 🌍 Public Section (Accessible to Everyone)
+
+- About Us page  
+- Mission & Vision  
+- Church leadership overview  
+- Service times & programmes  
+- Upcoming events  
+- Contact information  
+- Announcements and updates  
+
+### 🔐 Admin Section (Private Dashboard)
+
+- Member registration and management  
+- Leadership and department management  
+- Event planning and scheduling  
+- Task and responsibility tracking  
+- Church announcements management  
+- Attendance tracking  
+- Secure admin authentication   
+
+---
+
+## 🛠 Tech Stack
+
+- React  
+- Vite  
+- Tailwind CSS  
+- DaisyUI  
+- JavaScript (ES6+)  
+- ESLint & Prettier  
+
+---
+
+## ⚙️ Installation & Setup
+
+To run this project locally:
+
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/piwc-church-app.git
+
+2. Navigate to the project directory
+```bash
+cd piwc
+
+3. Install the dependencies
+```bash
+npm install
+
+4. Run the server
+```bash
+npm run dev
+
+5. Open your browser and visit:
+```bash
+http://localhost:5173
+
+
