@@ -174,13 +174,12 @@ This project is private and proprietary. All rights reserved by PIWC Barcelona.
 
 ---
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Mcdavis Albertio
-Web Developer
-Email: mcdavis705@gmail.com
-
-LinkedIn: Mcdavis Albertio
+* Mcdavis Albertio
+* Web Developer
+* Email: mcdavis705@gmail.com
+* LinkedIn: Mcdavis Albertio
 
 ## 📞 Contact
 
