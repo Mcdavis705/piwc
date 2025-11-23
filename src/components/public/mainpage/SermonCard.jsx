@@ -1,8 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Play, Mic, Calendar, Video } from 'lucide-react';
 
+// Extract YouTube video ID from any URL format
+export const getYouTubeId = (url) => {
+  if (!url) return null;
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\/live\/|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
+
+// Get YouTube thumbnail URL with fallback
+export const getYouTubeThumbnail = (url) => {
+  const videoId = getYouTubeId(url);
+  if (!videoId) return "https://via.placeholder.com/480x270?text=No+Thumbnail";
+
+  // Try maxres, then hq, then default
+  const base = `https://img.youtube.com/vi/${videoId}`;
+  const thumbnails = ["maxresdefault.jpg", "hqdefault.jpg", "mqdefault.jpg", "default.jpg"];
+  return `${base}/${thumbnails[0]}`; // use maxresfirst, can implement dynamic check if needed
+};
+
+
 const SermonCard = ({ sermon, index }) => {
+  const thumbnail = getYouTubeThumbnail(sermon.link);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -11,25 +35,21 @@ const SermonCard = ({ sermon, index }) => {
       transition={{ duration: 0.8, delay: index * 0.1 }}
       whileHover={{
         scale: 1.03,
-        boxShadow: '0 10px 20px rgba(0,0,0,0.15), 0 0 0 2px rgba(99,102,241,0.3)',
+        boxShadow:
+          '0 10px 20px rgba(0,0,0,0.15), 0 0 0 2px rgba(99,102,241,0.3)',
         transition: { duration: 0.2 },
       }}
       className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer"
     >
       {/* Image with video overlay */}
       <div className="relative h-48 bg-indigo-100 flex items-center justify-center">
-        <div className="relative h-48 bg-indigo-100 flex items-center justify-center">
-          {sermon.imageUrl?.[0]?.url && (
-            <img
-              src={sermon.imageUrl[0].url}
-              alt={sermon.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
+        <img
+          src={thumbnail}
+          alt={sermon.title}
+          className="w-full h-full object-cover"
+        />
 
-
-        {/* Clickable overlay to go to sermon link */}
+        {/* Clickable overlay */}
         <a
           href={sermon.link}
           target="_blank"
@@ -72,6 +92,16 @@ const SermonCard = ({ sermon, index }) => {
       </div>
     </motion.div>
   );
+};
+
+SermonCard.propTypes = {
+  sermon: PropTypes.shape({
+    title: PropTypes.string,
+    link: PropTypes.string,
+    speaker: PropTypes.string,
+    date: PropTypes.string,
+  }).isRequired,
+  index: PropTypes.number,
 };
 
 export default SermonCard;

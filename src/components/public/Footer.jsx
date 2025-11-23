@@ -3,6 +3,11 @@ import piwclogo from '../../assets/images/piwclogo.png';
 import { Facebook, Twitter, Instagram, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+function navigateToHome() {
+  window.location.href = '/';
+}
+
+
 const footerLinks = {
   'Quick Links': [{label: 'Services', path: '/services'}, {label: 'Events', path: '/events'}, {label: 'Sermons', path: '/sermonsPage'}, {label: 'About Us', path: '/aboutus'}],
   'Support': [{label: 'Contact Us', path: '/contact'}, {label: 'FAQ', path: '/faq'}, {label: 'Privacy Policy', path: '/privacy'}, {label: 'Terms of Use', path: '/terms'}],
@@ -16,7 +21,9 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8">
           
           {/* Logo */}
-          <div className="flex items-center space-x-2 text-2xl font-bold text-indigo-800 mb-6 md:mb-0">
+          <div 
+          onClick={navigateToHome}
+          className="flex items-center space-x-2 text-2xl font-bold text-indigo-800 mb-6 md:mb-0">
             <img src={piwclogo} alt="churchlogo" className="w-10 h-10" />
             <span>PIWC Barcelona</span>
           </div>

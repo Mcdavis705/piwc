@@ -1,22 +1,21 @@
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 function NotFound (){
 
     return(
         <section
-            className="min-h-screen flex flex-col max-w-4xl mx-auto w-full mt-20 justify-center items-center"
+        className="flex flex-col items-center justify-center h-screen bg-gray-100"
+    >
+        <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
+        <p className="text-2xl text-gray-600 mb-8">Page Not Found</p>
+        <Link
+            to="/"
+            className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
         >
-            <div className="overlay"></div> 
-            <div className="hero-content text-neutral-content text-center">
-                <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">404</h1>
-                    <p className="mb-5">
-                        Page Not Found
-                        <hr/>
-                    </p>
-                </div>
-            </div>
+            Go to Home
+        </Link>
         </section>
     )
 }

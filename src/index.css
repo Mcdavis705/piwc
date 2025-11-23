@@ -7,10 +7,14 @@
 
 
 @layer base {
-    html {
-        font-family: 'Poppins', sans-serif;
-        /* background-image: url('/background.jpg'); */
-        /* path relative to public */
+  body {
+    @apply bg-stone-200; /* Tailwind class for background */
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url('/background.jpg'); */
+    /* path relative to public */
         background-size: cover;
         /* cover the entire container */
         background-position: center;

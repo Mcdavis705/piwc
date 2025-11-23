@@ -12,13 +12,19 @@ const navItems = [
   { label: 'Contact', path: '/contact' },
 ];
 
+function navigateToHome() {
+  window.location.href = '/';
+}
+  
 function NavBar() {
   return (
     <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-4 bg-white/30 backdrop-blur-lg shadow-md z-50">
       {/* Logo */}
-      <div className="flex items-center space-x-2 text-2xl font-bold text-indigo-800">
-        <img src={churchLogo} alt="churchlogo" className="w-10 h-10" />
-        <span>PIWC Barcelona</span>
+      <div 
+        onClick={navigateToHome}
+        className="flex items-center space-x-2 text-2xl font-bold text-indigo-800">
+          <img src={churchLogo} alt="churchlogo" className="w-10 h-10" />
+            <span>PIWC Barcelona</span>
       </div>
 
       {/* Navigation Links */}

@@ -1,6 +1,11 @@
 {
   "leadership": [
     {
+      "name": "Ps. Stephen Bonnah",
+      "position": "District Pastor",
+      "image": "./pastorBonnah.jpg"
+    },
+    {
       "name": "Eld. Emmanuel Koduah",
       "position": "Presiding Elder",
       "image": "./koduah.jpg"
@@ -8,12 +13,12 @@
     {
       "name": "Dr. Daniel Kwakye",
       "position": "Secretary",
-      "image": "./daniel.png"
+      "image": "./daniel.jpg"
     },
     {
       "name": "Dr. Annete Abiyesuku",
       "position": "Deputy Secretary",
-      "image": "./mc.jpg"
+      "image": "./annete.jpg"
     }
   ]
 }

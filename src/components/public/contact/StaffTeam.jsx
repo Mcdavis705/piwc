@@ -36,12 +36,12 @@ function StaffTeam() {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md h-full">
-      <h3 className="text-xl font-bold text-gray-900 mb-6">Our Staff Team</h3>
+      <h3 className="text-xl font-bold text-gray-900 mb-6">Leaders</h3>
       <div className="space-y-4">
         {staff.map((member, index) => (
           <div key={index} className="flex items-center justify-between border-b border-gray-100 pb-3 last:border-b-0">
             <div className="flex items-center">
-              <img src={detailsData.leadership.find(leader => leader.name === member.name)?.image} alt={member.name} className="h-10 w-10 rounded-full mr-4" />
+              <img src={detailsData.leadership.find(leader => leader.name === member.name)?.image} alt={member.name} className="h-10 w-10 rounded-full" />
               <div>
                 <p className="text-gray-900 font-semibold">{member.name}</p>
                 <p className="text-sm text-gray-500">{member.role}</p>
