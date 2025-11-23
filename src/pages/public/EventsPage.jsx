@@ -1,7 +1,7 @@
 // src/pages/EventsPage.js
 import React from 'react';
-import EventSidebar from '../../components/user/events/EventsSidebar.jsx';
-import CalendarView from '../../components/user/events/CalendarView.jsx';
+import EventSidebar from '../../components/public/events/EventsSidebar.jsx';
+import CalendarView from '../../components/public/events/CalendarView.jsx';
 
 function EventsPage() {
   return (

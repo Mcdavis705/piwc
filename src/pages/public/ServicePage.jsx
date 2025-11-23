@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ServiceSearchControls from '../../components/user/services/ServiceSearchControl.jsx';
-import ServiceGrid from '../../components/user/services/ServiceGrid.jsx';
+import ServiceSearchControls from '../../components/public/services/ServiceSearchControl.jsx';
+import ServiceGrid from '../../components/public/services/ServiceGrid.jsx';
 
 function ServicesPage() {
     const [searchTerm, setSearchTerm] = useState('');

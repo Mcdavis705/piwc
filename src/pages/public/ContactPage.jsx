@@ -1,12 +1,11 @@
-// src/pages/ContactPage.js
-import React from 'react';
-import ContactForm from '../../components/user/contact/ContactForm';
-import DetailsCard from '../../components/user/contact/DetailsCard';
-import StaffTeam from '../../components/user/contact/StaffTeam';
-import ConnectSocials from '../../components/user/contact/ConnectSocials';
-import LocationMap from '../../components/user/contact/LocationMap';
 
-import backgroundImage from '../../assets/background.jpg';
+import React from 'react';
+import DetailsCard from '../../components/public/contact/DetailsCard';
+import StaffTeam from '../../components/public/contact/StaffTeam';
+import ConnectSocials from '../../components/public/contact/ConnectSocials';
+import LocationMap from '../../components/public/contact/LocationMap';
+
+import backgroundImage from '../../assets/images/background.jpg';
 
 const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImage})`,

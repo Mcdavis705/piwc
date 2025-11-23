@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import churchIconUrl from '../../../assets/group.jpg'; 
+import churchIconUrl from '../../../assets/images/group.jpg'; 
 import contactDetails from '../../../data/contactDetails.json';
 
 function ContactSection() {

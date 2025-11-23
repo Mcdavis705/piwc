@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import groupImageUrl from '../../../assets/group.jpg';
+import groupImageUrl from '../../../assets/images/group.jpg';
 
 
 function MissionValues() {

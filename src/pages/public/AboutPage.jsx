@@ -1,9 +1,9 @@
 
 import React from 'react';
-import HeroBanner from '../../components/user/aboutUs/HeroBanner';
-import MissionSection from '../../components/user/aboutUs/MissionSection';
-import HistorySection from '../../components/user/aboutUs/HistorySection';
-import LeadershipSection from '../../components/user/aboutUs/LeadershipSection';
+import HeroBanner from '../../components/public/aboutUs/HeroBanner';
+import MissionSection from '../../components/public/aboutUs/MissionSection';
+import HistorySection from '../../components/public/aboutUs/HistorySection';
+import LeadershipSection from '../../components/public/aboutUs/LeadershipSection';
 
 function AboutPage() {
   return (

@@ -1,11 +1,11 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Search, ChevronDown, Filter, SlidersHorizontal } from 'lucide-react';
-import SermonCard from '../../components/user/mainpage/SermonCard.jsx';
+import SermonCard from '../../components/public/mainpage/SermonCard.jsx';
 import UserContext from '../../contexts/userContext.js';
 
-import Pagination from '../../components/user/Pagination.jsx';
-import { image } from 'framer-motion/client';
+import Pagination from '../../components/public/Pagination.jsx';
+
 
 // // --- DUMMY DATA ---
 // const DUMMY_SERMONS = [

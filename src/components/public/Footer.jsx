@@ -1,5 +1,5 @@
-import { label } from 'framer-motion/client';
-import piwclogo from '../../assets/piwclogo.png'
+import React from 'react';
+import piwclogo from '../../assets/images/piwclogo.png';
 import { Facebook, Twitter, Instagram, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

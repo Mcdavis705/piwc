@@ -1,6 +1,7 @@
+import React from 'react';
 import { Menu, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import churchLogo from '../../assets/piwclogo.png';
+import churchLogo from '../../assets/images/piwclogo.png';
 
 const navItems = [
   { label: 'Home', path: '/' },

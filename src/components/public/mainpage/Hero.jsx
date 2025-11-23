@@ -1,6 +1,7 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-import backgroundImage from '../../../assets/herobackground1.png'; 
+import backgroundImage from '../../../assets/images/herobackground1.png'; 
 
 const backgroundImageStyle = {
   backgroundImage: `url(${backgroundImage})`,
