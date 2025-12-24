@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { Calendar, Mic, MapPin, Clock } from "lucide-react";
+import { Mic, MapPin, Clock } from "lucide-react";
 
 const ServiceCard = ({ service, index }) => {
   const title = service.title;

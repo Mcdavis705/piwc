@@ -16,7 +16,7 @@ const backgroundImageStyle = {
   
 function ContactPage() {
   return (
-    <div className="contact-page min-h-screen pt-15 bg-gray-50">
+    <div className="contact-page min-h-screen pt-15">
       {/* 1. Send Us a Message (Full Width)
       <section className="mb-16" style={backgroundImageStyle}>
         <h2 className="text-2xl font-bold text-gray-900 text-center ">Send Us a Message</h2>

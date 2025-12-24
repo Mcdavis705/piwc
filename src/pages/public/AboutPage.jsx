@@ -7,7 +7,7 @@ import LeadershipSection from '../../components/public/aboutUs/LeadershipSection
 
 function AboutPage() {
   return (
-    <div className="about-page pt-15 min-h-screen bg-gray-50">
+    <div className="about-page pt-15 min-h-screen">
       
       {/* 1. Hero Banner */}
       <HeroBanner />

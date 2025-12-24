@@ -34,7 +34,7 @@ function NavBar() {
             <li key={item.label}>
               <Link
                 to={item.path}
-                className="text-gray-600 hover:text-indigo-600 transition duration-150"
+                className="text-gray-600 hover:text-indigo-600 transition duration-150 isActive:text-indigo-600"
               >
                 {item.label}
               </Link>

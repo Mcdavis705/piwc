@@ -6,7 +6,7 @@ function ServicesPage() {
     const [searchTerm, setSearchTerm] = useState('');
     
     return (
-        <div className="pt-24 min-h-screen bg-gray-50">
+        <div className="pt-24 min-h-screen ">
             {/* Header and Controls */}
             <ServiceSearchControls 
                 searchTerm={searchTerm} 
