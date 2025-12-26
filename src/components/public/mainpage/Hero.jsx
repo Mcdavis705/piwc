@@ -12,7 +12,7 @@ const backgroundImageStyle = {
 
 function Hero() {
   return (
-    <div className="p-4 md:p-8">
+    <div className="w-full h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -22,7 +22,7 @@ function Hero() {
         style={backgroundImageStyle}
         
         whileHover={{ scale: 1.02 }}
-        className="relative h-[550px] w-full max-w-7xl mx-auto rounded-xl overflow-hidden shadow-2xl bg-cover bg-center transition-all duration-700"
+        className="relative h-screen w-full mx-auto rounded-xl overflow-hidden shadow-2xl bg-cover bg-center transition-all duration-700"
       >
         <div className="absolute inset-0 bg-indigo-900/45 backdrop-blur-[1px] flex flex-col justify-center items-center p-6 text-white">
 

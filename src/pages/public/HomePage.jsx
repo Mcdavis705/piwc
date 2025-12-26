@@ -9,7 +9,7 @@ import ContactSection from '../../components/public/mainpage/ContactSection.jsx'
 function HomePage() {
 
     return (
-        <div className="home-page p-10">
+        <div className="home-page pt-10 md:pt-16 lg:pt-20 space-y-20 md:space-y-24 lg:space-y-28">
             <Hero />
             <UpcomingServices />
             <FeaturedEvents />
