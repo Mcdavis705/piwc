@@ -8,4 +8,8 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()],
+    base: '/piwc/',
+    build: {
+      outDir: 'docs',
+    },
 })
